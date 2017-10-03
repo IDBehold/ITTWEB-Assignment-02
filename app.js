@@ -13,12 +13,9 @@ var newWorkout = require('./app_server/routes/new-workout');
 var indexApi = require('./app_api/routes/workout');
 
 var app = express();
-/*
-var corsOps = {
-    "origin": "*",
-    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE"};
-    */
+
 app.use(cors());
+app.options('/*', cors());
 
 
 
