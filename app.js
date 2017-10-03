@@ -10,7 +10,6 @@ var newExercise = require('./app_server/routes/new-exercise');
 var newWorkout = require('./app_server/routes/new-workout');
 //API
 var indexApi = require('./app_api/routes/workout');
-var cors = require('cors');
 
 var app = express();
 
@@ -31,7 +30,6 @@ app.use('/new-exercise', newExercise);
 app.use('/new-workout', newWorkout);
 //API
 app.use('/api', indexApi);
-app.use(cors());
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Methods', 'DELETE, PUT, GET, POST');
