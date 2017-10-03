@@ -15,7 +15,7 @@ var indexApi = require('./app_api/routes/workout');
 var app = express();
 
 app.use(cors());
-app.options('/*', cors());
+app.options('*', cors());
 
 
 
