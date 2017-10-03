@@ -13,10 +13,13 @@ var newWorkout = require('./app_server/routes/new-workout');
 var indexApi = require('./app_api/routes/workout');
 
 var app = express();
+/*
 var corsOps = {
     "origin": "*",
-    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE"}
-app.use(cors(corsOps));
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE"};
+    */
+app.use(cors());
+app.options('*', cors());
 
 
 
@@ -37,14 +40,6 @@ app.use('/new-exercise', newExercise);
 app.use('/new-workout', newWorkout);
 //API
 app.use('/api', indexApi);
-/*
-app.use(function(req, res, next) {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader('Access-Control-Allow-Methods', 'DELETE, PUT, GET, POST');
-    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, application/json");
-    return next();
-});
-*/
 
 
 
