@@ -30,7 +30,7 @@ app.use('/new-exercise', newExercise);
 app.use('/new-workout', newWorkout);
 //API
 app.use('/api', indexApi);
-app.all('/*', function(req, res, next) {
+app.use(function(req, res, next) {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader('Access-Control-Allow-Methods', 'DELETE, PUT, GET, POST');
     res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
