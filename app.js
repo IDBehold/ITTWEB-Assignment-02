@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 
 var index = require('./app_server/routes/index');
 var newExercise = require('./app_server/routes/new-exercise');
@@ -12,6 +13,8 @@ var newWorkout = require('./app_server/routes/new-workout');
 var indexApi = require('./app_api/routes/workout');
 
 var app = express();
+app.use(cors());
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
@@ -38,8 +41,7 @@ app.use(function(req, res, next) {
     return next();
 });
 */
-var cors = require('cors');
-app.use(cors());
+
 
 
 // catch 404 and forward to error handler
